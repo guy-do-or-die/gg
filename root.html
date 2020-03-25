@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Guardians of the Galaxy</title>
+
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link href="/css/style.css" type="text/css"  rel="stylesheet"></link>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    </head>
+    <body>
+    <div class="container margin-top: -50px">
+        <section class="content">
+            <div class="row">
+                <div class="col-lg-4"><b id="total" >374,045</b> Confirmed Cases</div>
+                <div class="col-lg-4"><b id="deaths">16,332</b> Deaths</div>
+                <div class="col-lg-4"><b id="recovered">102,524</b> Recovered</div>
+                <div class="col-lg-12">
+                    <div id="quizz" style="margin-bottom: 100px" class="row">
+                        <div class="col-lg-12">
+                            <h2>How do you feel today?</h2>
+                            <h3>Is there anybody infected around?</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button id="GOOD" class="btn btn-warning btn-lg" type="button" data-toggle="modal" data-target="#Modal">Perfect</button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button id="BAD" class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#Modal">Not so well</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button id="RECOVERED" class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#Modal">Recovered</button>
+                        </div>
+                    </div>
+                    <iframe style="width:100%"; width="560" height="600" src="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-lg-12">
+                    <h1>Top Countries Damaged</h1>
+                    <div id="countries"></div>
+                </div>
+                <div class="col-lg-12">
+                    <h1>Introduction</h2>
+                    <p>
+                    Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.
+
+                    At this time, there are no specific vaccines or treatments for COVID-19. However, there are many ongoing clinical trials evaluating potential treatments. WHO will continue to provide updated information as soon as clinical findings become available.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="left col-lg-6">
+                            <h1>Symptoms</h1>
+                            The COVID-19 virus affects different people in different ways.  COVID-19 is a respiratory disease and most infected people will develop mild to moderate symptoms and recover without requiring special treatment.  People who have underlying medical conditions and those over 60 years old have a higher risk of developing severe disease and death.
+                            </br>
+                            </br>
+                            Common symptoms include:
+                            <ul>
+                                <li>fever</li>
+                                <li>tiredness</li>
+                                <li>dry cough</li>
+                            </ul>
+
+                            Other symptoms include:
+                            <ul>
+                                <li>shortness of breath</li>
+                                <li>aches and pains</li>
+                                <li>sore throat</li>
+                                <li>and very few people will report diarrhoea, nausea or a runny nose.</li>
+                            </ul>
+                            People with mild symptoms who are otherwise healthy should self-isolate and contact their medical provider or a COVID-19 information line for advice on testing and referral.
+                       </div>
+                        <div class="left col-lg-6">
+                            <h1>Prevention</h1>
+                            <ul>
+                                <li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.</li>
+                                <li>Maintain at least 1 metre distance between you and people coughing or sneezing.</li>
+                                <li>Avoid touching your face.</li>
+                                <li>Cover your mouth and nose when coughing or sneezing.</li>
+                                <li>Stay home if you feel unwell.</li>
+                                <li>Refrain from smoking and other activities that weaken the lungs.</li>
+                                <li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sim col-lg-12">
+                    <h1>Pandemic spreads by country</h1>
+                    <p>
+                    According to <a href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/">The Washington Post</a>, let’s consider the simulation of coronavirus spreads. They called a fake disease simulitis. It spreads even more easily than covid-19: whenever a healthy person (blue color) comes into contact with a sick person (red color), the healthy person becomes sick, too.
+                    </p>
+                    <img src="/img/sim_1.png">
+                    <p>
+                    In real life, of course, people eventually recover. A recovered person (pink color) can neither transmit simulitis to a healthy person nor become sick again after coming in contact with a sick person.
+                    </p>
+                    <img src="/img/sim_2.png">
+                    <p>
+                    Let’s see what happens when simulitis spreads in a town of 200 people. We will start everyone in town at a random position, moving at a random angle, and we will make one person.
+                    Notice how the slope of the red curve, which represents the number of sick people, rises rapidly as the disease spreads and then tapers off as people recover.
+                    </p>
+                    <img src="/img/sim_3.png">
+                    <p>
+                    When it comes to the real covid-19, we would prefer to slow the spread of the virus before it infects a large portion of the U.S. population. To slow simulitis, let’s try to create a, such as the one the Chinese government imposed on Hubei province, covid-19’s ground zero.
+                    </p>
+                    <img src="/img/sim_4.png">
+                    <p>
+                    Let’s see what happens when a quarter of our population continues to move around while the other three quarters adopt a strategy of what health experts call "social distancing"
+                    </p>
+                    <img src="/img/sim_5.png">
+                    <p>
+                    To simulate more social distancing, instead of allowing a quarter of the population to move, we will see what happens when we let just one of every eight people move. 
+                    </p>
+                    <img src="/img/sim_6.png">
+                    <p>
+                    Even with different results, moderate social distancing will usually outperform the attempted quarantine, and extensive social distancing usually works best of all. Below is a comparison of your results. 
+                    </p>
+                    <img src="/img/sim_7.png">
+                    <p>
+                    Simulitis is not covid-19, and these simulations vastly oversimplify the complexity of real life. Yet just as simulitis spread through the networks of bouncing balls on your screen, covid-19 is spreading through our human networks — through our countries, our towns, our workplaces, our families. And, like a ball bouncing across the screen, a single person’s behavior can cause ripple effects that touch faraway people.
+                    </p>
+                </div>
+                <div class="spreads col-lg-12">
+                    <h1>Pandemic spreads by country</h1>
+                    <img src="/img/spread1.png">
+                    <p class="desc">
+                    In many countries one or a small number of regions have borne the brunt of the virus. Lombardia has eclipsed Wuhan as the most badly affected region in the world, and in Spain Madrid could soon surpass even that.
+                    </p>
+                    <img src="/img/spread2.png">
+                    <p class="desc">
+                    US states also show very different trajectories. Washington saw the first outbreak in the US, but its death toll has risen relatively slowly since then. New York’s mortality curve is much steeper.
+
+                    In most western countries case numbers have been increasing by about 33 per cent a day, a sign that other countries may soon be facing the same challenge as Italy.
+
+                    The Asian city-state of Singapore and the territory of Hong Kong are on a different trajectory in terms of the growth in case numbers. The rate of increase has so far been relatively contained through rapid and strict measures.
+                    </p>
+                    <img src="/img/spread3.png">
+                    <p class="desc">
+                    There have now been at least 100 confirmed cases recorded in 78 countries around the world.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <div class="block" data-block-type="simulation-recovery-demo">
+                        <div class="simulation" id="simulation-recovery-demo" style="position: relative;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <h1>Economic Impact</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4>GDP</h4>
+                            <img src="/img/gdp.png">
+                            <p class="desc">
+                            At Goldman Sachs, Jan Hatzius’s team said in a report that they now expect the world economy to contract about 1% this year, which would be a bigger decline than even that witnessed in 2009 amid the financial crisis. They were already projecting a 24% annualized drop in U.S. output in the next quarter.
+
+                            The dire forecasts from two of Wall Street’s biggest banks reflects the sudden stop that the U.S. and European economies are witnessing following China’s slump at the start of the year.
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <h4>OECD downgrades growth forecasts</h4>
+                            <img src="/img/oecd.png">
+                            <p class="desc">
+                            If the economy is growing, that generally means more wealth and more new jobs.
+
+                            It's measured by looking at the percentage change in gross domestic product, or the value of goods and services produced, typically over three months or a year.
+
+                            The world's economy could grow at its slowest rate since 2009 this year due to the coronavirus outbreak, according to the Organisation for Economic Cooperation and Development (OECD).
+
+                            The think tank has forecast growth of just 2.4% in 2020, down from 2.9% in November.
+
+                            It also said that a "longer lasting and more intensive" outbreak could halve growth to 1.5% in 2020 as factories suspend their activity and workers stay at home to try to contain the virus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <h1>Industry Impact</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4>Travel among hardest hit</h4>
+                            <img src="/img/airlines.png">
+                        </div>
+                        <div class="col-lg-6">
+                            <h4>Customers buying less</h4>
+                            <img src="/img/rest.png">
+                        </div>
+                    </div>
+                    <p class="desc">
+                    The EU is banning travellers from outside the bloc for 30 days in an unprecedented move to seal its borders because of the coronavirus crisis.
+
+                    The analytics firm ForwardKeys has estimated that up to 48,200 flights with 10.2 million seats could be affected by the ban, with the biggest impact falling on Air France.
+
+                    In the US, the Trump administration has banned travellers from European airports from entering the US.
+
+                    UK travel industry experts have expressed concerns about Chinese tourists being kept at home. There were 415,000 visits from China to the UK in the 12 months to September 2019, according to VisitBritain. Chinese travellers also spend three times more on an average visit to the UK at £1,680 each.
+
+                    Fear of the virus and government advice to stay at home is also having a devastating impact on hotels and restaurants.
+                    </p>
+                    <div class="col-lg-12">
+                        <h4>Restaurant Reservations Data</h4>
+                        <img src="/img/reserv.png">
+                    </div>
+                    <p>
+                    Short of being directed by their respective state, provincial, civic and federal governments to close restaurants or alter floor operations to mitigate the spread of COVID-19, the very latest OpenTable restaurant performance data shows the public is taking the concept of ‘social distancing’ to heart. The screenshot above was clipped from their client Data Centre this morning. Vancouver eateries were hard hit over the weekend with a drop of around 35%, whole restaurants in other Canadian cities, such as Toronto (50%), fared much worse.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <h1>Factories in China Slowed Down</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4>Industrial production</h4>
+                            <img src="/img/industrial.png">
+                            <p class="desc">
+                            Restrictions have affected the supply chains of big companies such as industrial equipment manufacturer JCB and carmaker Nissan.
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <h4>Car sales</h4>
+                            <img src="/img/cars.png">
+                            <p class="desc">
+                            Chinese car sales, for example, dropped by 92% during the first half of February. More carmakers, like Tesla or Geely, are now selling cars online as customers stay away from showrooms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <h1>Even «Safer» Investments Hit</h1>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h4>Stock Market Impact</h4>
+                            <img src="/img/impact.png">
+                            <p class="desc">
+                            The Dow and the FTSE have seen their biggest one day declines since 1987.
+                            Investors fear the spread of the coronavirus will destroy economic growth and that government action may not be enough to stop the decline.
+                            In response, central banks in many countries have cut interest rates.
+                            That should, in theory, make borrowing cheaper and encourage spending to boost the economy.
+                            The US Federal Reserve and the Bank of England are among those to slash interest rates.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Gold value</h4>
+                            <img src="/img/gold.png">
+                            <p class="desc">
+                            When a crisis hits, investors often choose less risky investments.
+                            Gold is traditionally considered a "safe haven" for investment in times of uncertainty.
+                            Until March the price of gold increased. But now, with investors increasingly fearful about a global recession, even the price of gold has tumbled.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Oil prices</h4>
+                            <img src="/img/oil.png">
+                            <p class="desc">
+                            Oil has slumped to its lowest price since June 2001.
+                            Investors fear that the global spread of the virus will further hit the global economy and demand for oil.
+                            The oil price had already been affected by a row between Opec, the group of oil producers, and Russia. Coronavirus has driven the price down further.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <h1>COVID-19 could impact private market</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4>Global funding ($B)</h4>
+                            <img src="/img/funding.png">
+                        </div>
+                        <div class="col-lg-6">
+                            <h4>Number of deals</h4>
+                            <img src="/img/deals.png">
+                       </div>
+                    </div>
+                    <p>
+                    The coronavirus outbreak has led to massive disruptions in travel, healthcare, and supply chains that have wreaked havoc on global financial markets.
+                    Startup financing is also taking a hit.
+                    Private market funding in Q1’20 is on pace to reach $77B, down more than 16% compared to Q4’19 and down nearly 12% versus Q1’19.
+                    Below, we take a look at the potential impact of the coronavirus outbreak on private market funding to companies globally.
+                    The projected decline in Q1’20 will be the second steepest quarterly decline in the past ten years, second only to a 36% decline in Q3’12.2
+
+                    Deal volume has fallen globally, but most severely in Asia. While global deal volume is expected to decline 20%, Asia-based deals are expected to fall 40%.
+                    </p>
+
+                </div>
+                <div class="col-lg-12">
+                    <h1>Did COVID-19 affect your business?</h1>
+                    <div style="margin-bottom: 100px" class="row">
+                        <div class="col-lg-6">
+                            <button id="YES" class="btn btn-danger btn-lg" type="button" data-toggle="modal" data-target="#exampleModal">YES</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button id="NO" class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#exampleModal">NO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h1>Thanks</h1>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content no-border">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-header" style="border: 0"></div>
+              <div class="modal-body" style="text-align: left;">
+                  <form>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Full name</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Your business</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your business">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email">
+                      </div>
+                </form>
+              </div>
+              <div class="modal-footer" style="border: 0">
+                <button type="button" data-dismiss="modal" class="btn btn-primary">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script>
+        (function($) {
+
+            $.getJSON('/countries', function(data) {
+                $('#countries').html(data.html);
+
+                var tabs = ['today','yesterday'];
+
+                tabs.forEach(function(val) {
+                    $('#main_table_countries_' + val).dataTable({
+                        'scrollCollapse': true,
+                        'scrollX': true,
+                        'order': [
+                            [1, 'desc']
+                        ],
+                        'sDom': '<"bottom"flp><"clear">',
+                        'paging': true,
+                        'pageLength': 10
+                    });
+
+                    $('#nav-' + val + '-tab a').click(function(e) {
+                        e.preventDefault();
+                        $(this).tab('show');
+                    })
+                });
+            });
+
+            $.getJSON('/data', function(data) {
+                $('#total').html(data.total);
+                $('#deaths').html(data.deaths);
+                $('#recovered').html(data.recovered);
+
+                var up = function() {
+                    window.scrollTo(0, 0);
+                }
+
+                $('#YES').click(function() {
+                    $('.modal-title').html('Please enter your contact enquire for fundraising');
+                    up()
+                })
+
+                $('#NO').click(function() {
+                    $('.modal-title').html('Would you like to get an additional fundraising?');
+                    up()
+                })
+
+                $('#Modal button').click(function() {
+                    $('#quizz').hide()
+                })
+
+
+                $('#body').on('mousedown', function (event) {
+                    event.preventDefault();
+                    $('#exampleModal').data('y', event.pageY);
+                    $('#exampleModal').modal('show');
+                });
+
+                $('#exampleModal').on('show.bs.modal', function (e) {
+                    var y = $('#exampleModal').data('y');
+                    $('#exampleModal').css('top', y);
+                });
+
+            });
+        })(jQuery)
+
+    </script>
+    </body>
+</html>
